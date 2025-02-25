@@ -30,6 +30,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        GH_TOKEN=${{ secrets.GITHUB_TOKEN }} gh-pages -d dist  # Directly pass GH_TOKEN to gh-pages
+        echo "Deploying to GitHub Pages..."
+        GH_TOKEN=${{ secrets.GITHUB_TOKEN }} npm run deploy  # Using the deploy script with token
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure GITHUB_TOKEN is available
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Make sure the GitHub token is available for the action
