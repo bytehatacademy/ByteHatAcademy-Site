@@ -9,7 +9,7 @@ const courses = [
     description: 'Master penetration testing, vulnerability assessment, and ethical hacking methodologies. CEH-inspired curriculum with hands-on labs.',
     duration: '12 weeks',
     level: 'Beginner',
-    status: 'Coming Soon',
+    status: 'Enroll Now',
   },
   {
     icon: <Lock className="h-12 w-12 text-accent" />,
@@ -17,12 +17,12 @@ const courses = [
     description: 'Learn security operations, threat detection, incident response, and defensive strategies for enterprise environments.',
     duration: '10 weeks',
     level: 'Beginner to Intermediate',
-    status: 'Coming Soon',
+    status: 'Enroll Now',
   },
   {
     icon: <Cloud className="h-12 w-12 text-accent" />,
     title: 'Cloud Security',
-    description: 'Secure cloud infrastructure and applications across AWS, Azure, and GCP. Focus on cloud-native security practices.',
+    description: 'Secure cloud infrastructure and applications across AWS based training. Focus on cloud-native security practices and AWS hacking',
     duration: '8 weeks',
     level: 'Intermediate',
     status: 'Enroll Now',
@@ -41,7 +41,7 @@ const courses = [
     description: 'Deep dive into advanced topics including malware analysis, reverse engineering, and advanced persistent threats.',
     duration: '16 weeks',
     level: 'Advanced',
-    status: 'Coming Soon',
+    status: 'Enroll Now',
   },
   {
     icon: <Brain className="h-12 w-12 text-accent" />,
@@ -65,7 +65,7 @@ const Courses = () => {
         <meta
           name="keywords"
           content="cybersecurity courses, ethical hacking training, DevSecOps certification, cloud security training"
-        />
+        />n
       </Helmet>
 
       <div className="pt-20 pb-16 bg-gray-900">
