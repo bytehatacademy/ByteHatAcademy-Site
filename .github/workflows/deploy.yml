@@ -22,8 +22,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Install gh-pages package
-      run: npm install gh-pages  # Explicitly install gh-pages
+    - name: Install gh-pages globally
+      run: npm install -g gh-pages  # Install gh-pages globally
 
     - name: Build the project
       run: npm run build
