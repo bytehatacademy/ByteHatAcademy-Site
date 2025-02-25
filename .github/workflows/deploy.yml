@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main  # Trigger the deployment only on push to the main branch
+      - main  # Trigger the deployment on push to the main branch
 
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Adjust this version based on your Node.js version
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
@@ -25,8 +25,12 @@ jobs:
     - name: Build the project
       run: npm run build
 
+    - name: Create .nojekyll file
+      run: echo > ./dist/.nojekyll
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's default token to deploy
-        publish_dir: ./dist  # Specify the build output directory
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Using the default GitHub token
+        publish_dir: ./dist  # Directory to be deployed
+        force_orphan: true  # Force the creation of a new orphan branch (gh-pages)
