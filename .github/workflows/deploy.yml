@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18'
 
     - name: Install dependencies
       run: npm install
@@ -25,12 +25,5 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: Create .nojekyll file
-      run: echo > ./dist/.nojekyll
-
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Using the default GitHub token
-        publish_dir: ./dist  # Directory to be deployed
-        force_orphan: true  # Force the creation of a new orphan branch (gh-pages)
+      run: npm run deploy  # This will run your "deploy" script from package.json
